@@ -5,19 +5,13 @@
 
 const weirdConcatenation = (s1, s2) => {
   let string = "";
-  string =
-    string +
-    s1[0] +
-    s1[1] +
-    s2[s2.length - 3] +
-    s2[s2.length - 2] +
-    s2[s2.length - 1];
+  string = string + s1.slice(0, 2) + s2.slice(s2.length - 3, s2.length);
   console.log(
     "This is the result of our weird concatenation: " + string.toUpperCase()
   );
 };
 
-weirdConcatenation("Miracolo", "Sabbia");
+weirdConcatenation("Leonessa", "Leone");
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
@@ -28,10 +22,11 @@ const random = () => {
   for (let i = 0; i < 10; i++) {
     array.push(Math.floor(Math.random() * 101));
   }
-  console.log("Guarda questo array!", array);
+  console.log("Look at this array!", array);
+  return array;
 };
 
-random();
+const ourArr = random();
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
@@ -42,12 +37,10 @@ const justEven = (arr) => {
   console.log("These are the even numbers in your array: " + arrEven);
 };
 
-const arr = [1, 8, 3, 45, 72, 2, 5, 98];
-
-justEven(arr);
+justEven(ourArr);
 
 /* ESERCIZIO 4 (forEach)
-  Scrivi una funzione per sommare i numeri contenuti in un array
+  Scrivi una funzione per sommare i numeri contenuti in uourA array
 */
 
 const sumArr = (arr) => {
@@ -56,7 +49,7 @@ const sumArr = (arr) => {
   console.log("This is the sum of the number in the array: " + sumTot);
 };
 
-sumArr(arr);
+sumArr(ourArr);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -69,7 +62,7 @@ const sumArrRed = (arr) => {
   );
 };
 
-sumArrRed(arr);
+sumArrRed(ourArr);
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
@@ -80,7 +73,7 @@ const addN = (arr, num) => {
   console.log(`Let's add ${num} to our array! ${arrAddN}`);
 };
 
-addN(arr, 5);
+addN(ourArr, 5);
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
