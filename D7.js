@@ -4,8 +4,7 @@
 */
 
 const weirdConcatenation = (s1, s2) => {
-  let string = "";
-  string = string + s1.slice(0, 2) + s2.slice(s2.length - 3, s2.length);
+  let string = string + s1.slice(0, 2) + s2.slice(s2.length - 3, s2.length);
   console.log(
     "This is the result of our weird concatenation: " + string.toUpperCase()
   );
@@ -17,7 +16,7 @@ weirdConcatenation("Leonessa", "Leone");
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
 
-const random = () => {
+const randomNums = () => {
   let array = [];
   for (let i = 0; i < 10; i++) {
     array.push(Math.floor(Math.random() * 101));
@@ -26,7 +25,7 @@ const random = () => {
   return array;
 };
 
-const ourArr = random();
+const ourArr = randomNums();
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
@@ -97,7 +96,7 @@ lengthArr(arrStr);
 
 const oddNumbers = () => {
   let oddNum = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 1; i < 100; i++) {
     if (i % 2 === 1) {
       oddNum.push(i);
     }
